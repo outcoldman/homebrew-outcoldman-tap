@@ -18,7 +18,7 @@ class CodesignRequirement < Requirement
   end
 end
 
-class LlvmAT40 < Formula
+class LlvmAT400 < Formula
   desc "Next-gen compiler infrastructure"
   homepage "http://llvm.org/"
   revision 1
