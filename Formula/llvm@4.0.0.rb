@@ -28,8 +28,6 @@ class LlvmAT40 < Formula
 
     resource "clang" do
       url "http://llvm.org/git/clang.git", :branch => "release_40"
-      # to support C++17 in clang-format
-      patch :DATA
     end
 
     resource "clang-extra-tools" do
@@ -367,16 +365,3 @@ class LlvmAT40 < Formula
     end
   end
 end
-__END__
-Index: lib/Format/Format.cpp
-===================================================================
---- lib/Format/Format.cpp (revision 297506)
-+++ lib/Format/Format.cpp (working copy)
-@@ -1893,6 +1893,7 @@
-   LangOpts.CPlusPlus = 1;
-   LangOpts.CPlusPlus11 = Style.Standard == FormatStyle::LS_Cpp03 ? 0 : 1;
-   LangOpts.CPlusPlus14 = Style.Standard == FormatStyle::LS_Cpp03 ? 0 : 1;
-+  LangOpts.CPlusPlus1z = Style.Standard == FormatStyle::LS_Cpp03 ? 0 : 1;
-   LangOpts.LineComment = 1;
-   bool AlternativeOperators = Style.IsCpp();
-   LangOpts.CXXOperatorNames = AlternativeOperators ? 1 : 0;
