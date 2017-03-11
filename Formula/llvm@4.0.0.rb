@@ -23,7 +23,7 @@ class LlvmAT400 < Formula
   homepage "http://llvm.org/"
   revision 1
 
-  stable do
+  head do
     url "http://llvm.org/git/llvm.git", :branch => "release_40"
 
     resource "clang" do
